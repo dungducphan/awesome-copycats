@@ -128,9 +128,9 @@ awful.layout.layouts = {
     --lain.layout.cascade.tile,
     lain.layout.centerwork,
     lain.layout.centerwork.horizontal,
-    --lain.layout.termfair,
-    --lain.layout.termfair.center,
-    awful.layout.suit.floating
+    lain.layout.termfair,
+    lain.layout.termfair.center,
+    --awful.layout.suit.floating
 }
 
 lain.layout.termfair.nmaster           = 3
