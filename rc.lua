@@ -821,4 +821,5 @@ awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("blueman-applet")
 awful.spawn.with_shell("powerkit")
+awful.spawn.with_shell("p2m")
 -- }}}
