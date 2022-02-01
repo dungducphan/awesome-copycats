@@ -192,6 +192,7 @@ local bat = lain.widget.bat({
 -- ALSA volume
 local volicon = wibox.widget.imagebox(theme.widget_vol)
 theme.volume = lain.widget.alsa({
+    cmd = os.getenv("AMIXERCMD"),
     settings = function()
         if volume_now.status == "off" then
             volume_now.level = volume_now.level .. "M"
