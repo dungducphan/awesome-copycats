@@ -11,6 +11,7 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
+local quake         = require("lain/util/quake")
 local gears         = require("gears")
 local awful         = require("awful")
                       require("awful.autofocus")
@@ -249,7 +250,10 @@ screen.connect_signal("arrange", function (s)
 end)
 
 -- Create a wibox for each screen and add it
-awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) end)
+awful.screen.connect_for_each_screen(function(s) 
+  beautiful.at_screen_connect(s) 
+  s.quake = quake({ app = "alacritty", argname = "--title %s", extra = "--class QuakeDD -e tmux", visible = true, height = 0.9, screen = s })
+end)
 
 -- }}}
 
