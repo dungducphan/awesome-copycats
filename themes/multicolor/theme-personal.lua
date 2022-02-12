@@ -17,7 +17,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                                 = theme.confdir .. "/wall.png"
-theme.font                                      = "Hack Nerd Font Mono 12"
+theme.font                                      = "Hack Nerd Font Mono 10"
 theme.menu_bg_normal                            = "#000000"
 theme.menu_bg_focus                             = "#000000"
 theme.bg_normal                                 = "#000000"
@@ -308,12 +308,6 @@ function theme.at_screen_connect(s)
             layout = wibox.layout.fixed.horizontal,
             mailicon,
             --theme.mail.widget,
-            netdownicon,
-            netdowninfo,
-            netupicon,
-            netupinfo.widget,
-            volicon,
-            theme.volume.widget,
             memicon,
             memory.widget,
             cpuicon,
@@ -343,7 +337,13 @@ function theme.at_screen_connect(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
+            netdownicon,
+            netdowninfo,
+            netupicon,
+            netupinfo.widget,
+            volicon,
+            theme.volume.widget,
+           wibox.widget.systray(),
             s.mylayoutbox,
         },
     }
